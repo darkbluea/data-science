@@ -27,7 +27,8 @@ def main():
     def pie(df_col, x, y):
         count = Counter(df_col)
         count = pd.DataFrame({x:count.keys(), y:count.values()})
-#        fig = px.pie(count, x, y)
+        fig = px.pie(count, values=x, names=y)
+
     fig = px.pie(df_unclean, values='sex')
     st.plotly_chart(fig)
     
