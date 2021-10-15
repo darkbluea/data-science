@@ -29,8 +29,9 @@ def main():
         count = pd.DataFrame({x:count.keys(), y:count.values()})
         fig = px.pie(count, x, y)
         st.plotly_chart(fig)
-        
-    pie(df_clean['sex'], 'sex', 'number of patients')
+    
+    sex = df_unclean['sex']
+    pie(sex, 'sex', 'number of patients')
     hide_menu_style = """
     <style>
     #MainMenu {visibility: hidden;}
