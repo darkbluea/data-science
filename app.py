@@ -24,13 +24,14 @@ def main():
     df_unclean = pd.read_csv("heart.csv")
     df_clean = pd.read_csv("clean_heart.csv")
     
-    def pie(df_col, x, y):
-        count = Counter(df_col)
-        count = pd.DataFrame({x:count.keys(), y:count.values()})
-        fig = px.pie(count, x, y)
-        st.plotly_chart(fig)
-    
-    pie(df_unclean['sex'], 'sex', 'number of patients')
+#    def pie(df_col, x, y):
+#        count = Counter(df_col)
+#        count = pd.DataFrame({x:count.keys(), y:count.values()})
+#        fig = px.pie(count, x, y)
+#        st.plotly_chart(fig)
+#    
+#    pie(df_unclean['sex'], 'sex', 'number of patients')
+    fig = px.pie(df_unclean, value='sex')
     hide_menu_style = """
     <style>
     #MainMenu {visibility: hidden;}
