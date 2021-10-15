@@ -21,7 +21,8 @@ def main():
     """
     st.markdown(html_temp, unsafe_allow_html=True)
 
-    df = pd.read_csv("clean_heart.csv")
+    df_unclean = pd.read_csv("heart.csv")
+    df_clean = pd.read_csv("clean_heart.csv")
     
     def pie(df_col, x, y):
         count = Counter(df_col)
@@ -29,7 +30,7 @@ def main():
         fig = px.pie(count, x, y)
         st.plotly_chart(fig)
         
-    pie(df['sex'], 'sex', 'number of patients')
+    pie(df_unclean['sex'], 'sex', 'number of patients')
     hide_menu_style = """
     <style>
     #MainMenu {visibility: hidden;}
