@@ -28,7 +28,7 @@ def main():
         count = Counter(df_col)
         count = pd.DataFrame({x:count.keys(), y:count.values()})
 #        fig = px.pie(count, x, y)
-        fig = px.pie(df_unclean)
+        fig = px.pie(count)
         st.plotly_chart(fig)
     
     pie(df_unclean['sex'], 'sex', 'number of patients')
