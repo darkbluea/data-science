@@ -32,6 +32,7 @@ def main():
 #    
 #    pie(df_unclean['sex'], 'sex', 'number of patients')
     fig = px.pie(df_unclean, values='sex')
+    fig.show()
     hide_menu_style = """
     <style>
     #MainMenu {visibility: hidden;}
