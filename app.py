@@ -29,7 +29,6 @@ def main():
         fig = px.pie(df, **kwargs)
         st.plotly_chart(fig)
 
-
     fig = px.pie(df_unclean, values='sex')
     st.plotly_chart(fig)
 
