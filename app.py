@@ -28,8 +28,8 @@ def main():
         count = Counter(df_col)
         count = pd.DataFrame({x:count.keys(), y:count.values()})
 #        fig = px.pie(count, x, y)
-        fig = px.pie(count)
-        st.plotly_chart(fig)
+    fig = px.pie(count, values='sex')
+    st.plotly_chart(fig)
     
     pie(df_unclean['sex'], 'sex', 'number of patients')
     hide_menu_style = """
