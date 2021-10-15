@@ -30,8 +30,7 @@ def main():
         fig = px.pie(count, x, y)
         st.plotly_chart(fig)
     
-    sex = df_unclean['sex']
-    pie(sex, 'sex', 'number of patients')
+    pie(df_unclean['sex'], 'sex', 'number of patients')
     hide_menu_style = """
     <style>
     #MainMenu {visibility: hidden;}
