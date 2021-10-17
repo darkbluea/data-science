@@ -18,7 +18,7 @@ def main():
     # title
     html_temp = """
     <div>
-    <h1 style="color:MEDIUMSEAGREEN;text-align:left;"> Crop Recommendation  🌱 </h1>
+    <h1 style="color:MEDIUMSEAGREEN;text-align:left;"> Analyzing physical condition related to heart diseases ❤️ </h1>
     </div>
     """
     st.markdown(html_temp, unsafe_allow_html=True)
@@ -31,14 +31,14 @@ def main():
         fig = px.pie(df, **kwargs)
         st.plotly_chart(fig)
 
-    pie("sex.csv", values='number of patients', names='sex')
-    pie("cp.csv", values='number of patients', names='chest pain type')
-    pie("fbs.csv", values='number of patients', names='fasting blood sugar over 120 mg/dl')
-    pie("restecg.csv", values='number of patients', names='resting electrocardiographic results')
-    pie("exang.csv", values='number of patients', names='exercise induced angina')
-    pie("ca.csv", values='number of patients', names='number of major blood vessels coloured by colonoscopy')
-    pie("thal.csv", values='number of patients', names='thal')
-    pie("target.csv", values='number of patients', names='target')
+    pie("sex.csv", values='number of patients', names='sex', title='The distribution of men and women')
+    pie("cp.csv", values='number of patients', names='chest pain type', title='The distribution of the different types of chest pain')
+    pie("fbs.csv", values='number of patients', names='fasting blood sugar over 120 mg/dl', title='The distribution of patients with and with fasting blood sugar')
+    pie("restecg.csv", values='number of patients', names='resting electrocardiographic results', title='the Distribution of patients resting electrocardiographic results')
+    pie("exang.csv", values='number of patients', names='exercise induced angina', title='The distribution of patients who feel chest pains after physical exercise')
+    pie("ca.csv", values='number of patients', names='number of major blood vessels coloured by colonoscopy', title='The distribution of the patients number number of major blood vessels coloured by colonoscopy')
+    pie("thal.csv", values='number of patients', names='thal', title='The distribution of the patients thal results')
+    pie("target.csv", values='number of patients', names='target', title='The distribution of patients with and with a heart disease')
 
     fig = sns.histplot(x='age', hue='target', data=df, element='step')
     st.pyplot(fig)
