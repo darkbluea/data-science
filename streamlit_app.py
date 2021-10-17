@@ -13,7 +13,7 @@ from matplotlib.figure import Figure
 import seaborn as sns
 
 
-st.beta_set_page_config(page_title="Heart Disease", page_icon="https://www.freeiconspng.com/thumbs/heart-png/heart-png-15.png", layout='centered', initial_sidebar_state="collapsed")
+st.set_page_config(page_title="Heart Disease", page_icon="https://www.freeiconspng.com/thumbs/heart-png/heart-png-15.png", layout='centered', initial_sidebar_state="collapsed")
 
 def main():
     # title
@@ -33,7 +33,7 @@ def main():
         fig = px.pie(df, **kwargs)
         st.plotly_chart(fig)
 
-    col1, col2 = st.beta_columns([2, 2])
+    col1, col2 = st.columns(2)
 
     with col1:
         pie("sex.csv", values='number of patients', names='sex', title='The distribution of men and women')
