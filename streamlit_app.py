@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 from collections import Counter
 
-import matplotlib.figure as Figure
+from matplotlib.figure import Figure
 import seaborn as sns
 
 
