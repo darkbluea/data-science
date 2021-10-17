@@ -17,10 +17,7 @@ st.set_page_config(page_title="Heart Disease", page_icon="https://www.freeiconsp
 
 def main():
     # title
-    html_t        st.write("""
-        text
-        """)
-emp = """
+    html_temp = """
     <div>
     <h1 style="color:MEDIUMSEAGREEN;text-align:left;"> Analyzing physical condition related to heart diseases ❤️ </h1>
     </div>
