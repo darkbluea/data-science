@@ -1,5 +1,5 @@
 ,thal,number of patients
-0,"dict_keys([3, 2, 1, 0])","dict_values([410, 544, 64, 7])"
-1,"dict_keys([3, 2, 1, 0])","dict_values([410, 544, 64, 7])"
-2,"dict_keys([3, 2, 1, 0])","dict_values([410, 544, 64, 7])"
-3,"dict_keys([3, 2, 1, 0])","dict_values([410, 544, 64, 7])"
+0,3,410
+1,2,544
+2,1,64
+3,0,7

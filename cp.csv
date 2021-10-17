@@ -1,5 +1,5 @@
 ,chest pain type,number of patients
-0,"dict_keys(['typical angina', 'atypical angina', 'non-anginal pain', 'asymptomatic'])","dict_values([497, 167, 284, 77])"
-1,"dict_keys(['typical angina', 'atypical angina', 'non-anginal pain', 'asymptomatic'])","dict_values([497, 167, 284, 77])"
-2,"dict_keys(['typical angina', 'atypical angina', 'non-anginal pain', 'asymptomatic'])","dict_values([497, 167, 284, 77])"
-3,"dict_keys(['typical angina', 'atypical angina', 'non-anginal pain', 'asymptomatic'])","dict_values([497, 167, 284, 77])"
+0,typical angina,497
+1,atypical angina,167
+2,non-anginal pain,284
+3,asymptomatic,77
