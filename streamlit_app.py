@@ -33,58 +33,54 @@ def main():
         fig = px.pie(df, **kwargs)
         st.plotly_chart(fig)
 
-    col1, col2 = st.columns((2, 1))
+    pie("sex.csv", values='number of patients', names='sex', title='The distribution of men and women')
+    pie("cp.csv", values='number of patients', names='chest pain type', title='The distribution of the different types of chest pain')
+    pie("fbs.csv", values='number of patients', names='fasting blood sugar over 120 mg/dl', title='The distribution of patients with and with fasting blood sugar')
+    pie("restecg.csv", values='number of patients', names='resting electrocardiographic results', title='the Distribution of patients resting electrocardiographic results')
+    pie("exang.csv", values='number of patients', names='exercise induced angina', title='The distribution of patients who feel chest pains after physical exercise')
+    pie("ca.csv", values='number of patients', names='number of major blood vessels coloured by colonoscopy', title='The distribution of the patients number number of major blood vessels coloured by colonoscopy')
+    pie("thal.csv", values='number of patients', names='thal', title='The distribution of the patients thal results')
+    pie("target.csv", values='number of patients', names='target', title='The distribution of patients with and without a heart disease')
 
-    with col1:
-        pie("sex.csv", values='number of patients', names='sex', title='The distribution of men and women')
-        pie("cp.csv", values='number of patients', names='chest pain type', title='The distribution of the different types of chest pain')
-        pie("fbs.csv", values='number of patients', names='fasting blood sugar over 120 mg/dl', title='The distribution of patients with and with fasting blood sugar')
-        pie("restecg.csv", values='number of patients', names='resting electrocardiographic results', title='the Distribution of patients resting electrocardiographic results')
-        pie("exang.csv", values='number of patients', names='exercise induced angina', title='The distribution of patients who feel chest pains after physical exercise')
-        pie("ca.csv", values='number of patients', names='number of major blood vessels coloured by colonoscopy', title='The distribution of the patients number number of major blood vessels coloured by colonoscopy')
-        pie("thal.csv", values='number of patients', names='thal', title='The distribution of the patients thal results')
-        pie("target.csv", values='number of patients', names='target', title='The distribution of patients with and without a heart disease')
+    fig = Figure()
+    ax = fig.subplots()
+    sns.histplot(x='age', hue='target', data=df_semi_clean, element='step', ax=ax)
+    ax.set_xlabel('age')
+    ax.set_ylabel('count')
+    st.pyplot(fig)
+    st.write("""
+    text
+    """)
 
-    with col2:
-        fig = Figure()
-        ax = fig.subplots()
-        sns.histplot(x='age', hue='target', data=df_semi_clean, element='step', ax=ax)
-        ax.set_xlabel('age')
-        ax.set_ylabel('count')
-        st.pyplot(fig)
-        st.write("""
-        text
-        """)
+    fig = Figure()
+    ax = fig.subplots()
+    sns.countplot(x = 'target', data = df_semi_clean, hue = 'slope', ax=ax)
+    ax.set_xlabel('target')
+    ax.set_ylabel('count')
+    st.pyplot(fig)
+    st.write("""
+    text
+    """)
 
-        fig = Figure()
-        ax = fig.subplots()
-        sns.countplot(x = 'target', data = df_semi_clean, hue = 'slope', ax=ax)
-        ax.set_xlabel('target')
-        ax.set_ylabel('count')
-        st.pyplot(fig)
-        st.write("""
-        text
-        """)
+    fig = Figure()
+    ax = fig.subplots()
+    sns.countplot(x = 'target', data = df_semi_clean, hue = 'cp', ax=ax)
+    ax.set_xlabel('target')
+    ax.set_ylabel('count')
+    st.pyplot(fig)
+    st.write("""
+    text
+    """)
 
-        fig = Figure()
-        ax = fig.subplots()
-        sns.countplot(x = 'target', data = df_semi_clean, hue = 'cp', ax=ax)
-        ax.set_xlabel('target')
-        ax.set_ylabel('count')
-        st.pyplot(fig)
-        st.write("""
-        text
-        """)
-
-        fig = Figure()
-        ax = fig.subplots()
-        sns.countplot(x = 'target', data = df_semi_clean, hue = 'exang', ax=ax)
-        ax.set_xlabel('target')
-        ax.set_ylabel('count')
-        st.pyplot(fig)
-        st.write("""
-        text
-        """)
+    fig = Figure()
+    ax = fig.subplots()
+    sns.countplot(x = 'target', data = df_semi_clean, hue = 'exang', ax=ax)
+    ax.set_xlabel('target')
+    ax.set_ylabel('count')
+    st.pyplot(fig)
+    st.write("""
+    text
+    """)
 
     hide_menu_style = """
     <style>
