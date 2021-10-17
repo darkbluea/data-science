@@ -29,8 +29,15 @@ def main():
         fig = px.pie(df, **kwargs)
         st.plotly_chart(fig)
 
-    pie("sex_number of patients.csv", values='number of patients', names='sex')
-#    pie(df_unclean['sex'], 'sex', 'number of patients')
+    pie("sex.csv", values='number of patients', names='sex')
+    pie("cp.csv", values='number of patients', names='chest pain type')
+    pie("fbs.csv", values='number of patients', names='fasting blood sugar over 120 mg/dl')
+    pie("restecg.csv", values='number of patients', names='resting electrocardiographic results')
+    pie("exang.csv", values='number of patients', names='exercise induced angina')
+    pie("ca.csv", values='number of patients', names='number of major blood vessels coloured by colonoscopy')
+    pie("thal.csv", values='number of patients', names='thal')
+    pie("target.csv", values='number of patients', names='target')
+
     hide_menu_style = """
     <style>
     #MainMenu {visibility: hidden;}
