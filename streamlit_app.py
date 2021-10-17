@@ -9,6 +9,8 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 from collections import Counter
 
+import seaborn as sns
+
 
 st.beta_set_page_config(page_title="Heart Disease", page_icon="https://www.freeiconspng.com/thumbs/heart-png/heart-png-15.png", layout='centered', initial_sidebar_state="collapsed")
 
@@ -37,6 +39,9 @@ def main():
     pie("ca.csv", values='number of patients', names='number of major blood vessels coloured by colonoscopy')
     pie("thal.csv", values='number of patients', names='thal')
     pie("target.csv", values='number of patients', names='target')
+
+    fig = sns.histplot(x='age', hue='target', data=df, element='step')
+    st.pyplot(fig)
 
     hide_menu_style = """
     <style>
