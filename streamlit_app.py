@@ -33,7 +33,7 @@ def main():
         fig = px.pie(df, **kwargs)
         st.plotly_chart(fig)
 
-    col1, col2 = st.beta_columns([2, 2])
+    col1, col2 = st.columns(2)
 
     with col1:
         pie("sex.csv", values='number of patients', names='sex', title='The distribution of men and women')
