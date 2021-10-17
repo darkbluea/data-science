@@ -49,7 +49,7 @@ def main():
     ax.set_ylabel('count')
     st.pyplot(fig)
     st.write("""
-    text
+    We can see that heart diseases are more common to people that are above the age of 50.
     """)
 
     fig = Figure()
@@ -59,7 +59,7 @@ def main():
     ax.set_ylabel('count')
     st.pyplot(fig)
     st.write("""
-    text
+    We can see that people who have less slopes in peak exercise are usually people with heart diseases. 
     """)
 
     fig = Figure()
@@ -69,7 +69,7 @@ def main():
     ax.set_ylabel('count')
     st.pyplot(fig)
     st.write("""
-    text
+    We can see that people with heart diseases mostly have "typical angina" type of chest pain.
     """)
 
     fig = Figure()
@@ -79,7 +79,7 @@ def main():
     ax.set_ylabel('count')
     st.pyplot(fig)
     st.write("""
-    text
+    We can see that people with heart diseases are more pron to chest pains after exercising
     """)
 
     hide_menu_style = """
