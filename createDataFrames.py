@@ -35,3 +35,5 @@ createCount('exang', df['exang'], 'exercise induced angina', 'number of patients
 createCount('ca', df['ca'], 'number of major blood vessels coloured by colonoscopy', 'number of patients')
 createCount('thal', df['thal'], 'thal', 'number of patients')
 createCount('target', df['target'], 'target', 'number of patients')
+
+df.to_csv("semi_cleaned_heart.csv")

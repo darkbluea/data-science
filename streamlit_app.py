@@ -26,6 +26,7 @@ def main():
 
     df_unclean = pd.read_csv("heart.csv")
     df_clean = pd.read_csv("clean_heart.csv")
+    df_semi_clean = pd.read_csv("semi_cleaned_heart.csv")
 
     def pie(name_dataset, **kwargs):
         df = pd.read_csv(name_dataset)
@@ -43,14 +44,28 @@ def main():
 
     fig = Figure()
     ax = fig.subplots()
-    sns.histplot(x='age', hue='target', data=df_unclean, element='step', ax=ax)
+    sns.histplot(x='age', hue='target', data=df_semi_clean, element='step', ax=ax)
     ax.set_xlabel('age')
     ax.set_ylabel('count')
     st.pyplot(fig)
 
     fig = Figure()
     ax = fig.subplots()
-    sns.countplot(x = 'target', data = df_unclean, hue = 'slope', ax=ax)
+    sns.countplot(x = 'target', data = df_semi_clean, hue = 'slope', ax=ax)
+    ax.set_xlabel('target')
+    ax.set_ylabel('count')
+    st.pyplot(fig)
+
+    fig = Figure()
+    ax = fig.subplots()
+    sns.countplot(x = 'target', data = df_semi_clean, hue = 'cp', ax=ax)
+    ax.set_xlabel('target')
+    ax.set_ylabel('count')
+    st.pyplot(fig)
+
+    fig = Figure()
+    ax = fig.subplots()
+    sns.countplot(x = 'target', data = df_semi_clean, hue = 'exang', ax=ax)
     ax.set_xlabel('target')
     ax.set_ylabel('count')
     st.pyplot(fig)
