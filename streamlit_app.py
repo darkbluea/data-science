@@ -24,12 +24,6 @@ def main():
     df_unclean = pd.read_csv("heart.csv")
     df_clean = pd.read_csv("clean_heart.csv")
 
-    def pie2(col, x, y):
-        count = Counter(col)
-        count = pd.DataFrame({x:count.keys(), y:count.values()})
-        fig = px.pie(count, x, y)
-        st.plotly_chart(fig)
-
     def pie(name_dataset, **kwargs):
         df = pd.read_csv(name_dataset)
         fig = px.pie(df, **kwargs)

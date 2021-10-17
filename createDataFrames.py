@@ -11,6 +11,14 @@ from collections import Counter
 
 df = pd.read_csv("heart.csv")
 
+df['sex'] = np.where(df['sex']==1, 'male', 'female')
+df['cp'] = np.where(df['cp']==0, 'typical angina', np.where(df['cp']==1, 'atypical angina',
+    np.where(df['cp']==2, 'non-anginal pain', np.where(df['cp']==3, 'asymptomatic', 0))))
+df['fbs'] = np.where(df['fbs']==1, 'true', 'false')
+df['restecg'] = np.where(df['restecg']==0, 'normal', 'abnormal')
+df['exang'] = np.where(df['exang']==1, 'yes', 'no')
+df['target'] = np.where(df['target']==1, 'not sick', 'sick')
+
 print(df.head())
 
 def createCount(name, df_col, x, y):
