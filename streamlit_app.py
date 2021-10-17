@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 from collections import Counter
 
+import matplotlib.figure as Figure
 import seaborn as sns
 
 
@@ -40,10 +41,14 @@ def main():
     pie("thal.csv", values='number of patients', names='thal', title='The distribution of the patients thal results')
     pie("target.csv", values='number of patients', names='target', title='The distribution of patients with and without a heart disease')
 
-    fig = sns.histplot(x='age', hue='target', data=df_unclean, element='step')
+    fig = Figure()
+    ax = fig.subplots()
+    sns.histplot(x='age', hue='target', data=df_unclean, element='step', ax=ax)
     st.pyplot(fig)
-    fig = sns.countplot(x = 'target', data = df_unclean, hue = 'slope')
-    st.pyplot(fig)
+#    fig = sns.histplot(x='age', hue='target', data=df_unclean, element='step')
+#    st.pyplot(fig)
+#    fig = sns.countplot(x = 'target', data = df_unclean, hue = 'slope')
+#    st.pyplot(fig)
 
     hide_menu_style = """
     <style>
