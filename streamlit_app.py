@@ -44,6 +44,8 @@ def main():
     fig = Figure()
     ax = fig.subplots()
     sns.histplot(x='age', hue='target', data=df_unclean, element='step', ax=ax)
+    ax.set_xlabel('xlabel')
+    ax.set_ylabel('ylabel')
     st.pyplot(fig)
 #    fig = sns.histplot(x='age', hue='target', data=df_unclean, element='step')
 #    st.pyplot(fig)
