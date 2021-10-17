@@ -40,6 +40,8 @@ def main():
     pie("thal.csv", values='number of patients', names='thal', title='The distribution of the patients thal results')
     pie("target.csv", values='number of patients', names='target', title='The distribution of patients with and without a heart disease')
 
+    fig = sns.histplot(x='age', hue='target', data=df_unclean, element='step')
+    st.pyplot(fig)
     fig = sns.countplot(x = 'target', data = df_unclean, hue = 'slope')
     st.pyplot(fig)
 
