@@ -10,7 +10,7 @@ import plotly.express as px
 from collections import Counter
 
 
-st.beta_set_page_config(page_title="Heart Disease", page_icon=":heart:", layout='centered', initial_sidebar_state="collapsed")
+st.beta_set_page_config(page_title="Heart Disease", page_icon="https://www.freeiconspng.com/thumbs/heart-png/heart-png-15.png", layout='centered', initial_sidebar_state="collapsed")
 
 def main():
     # title
