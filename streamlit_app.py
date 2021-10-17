@@ -26,10 +26,10 @@ def main():
 
     def pie(name_dataset, **kwargs):
         df = pd.read_csv(name_dataset)
-        fig = px.pie(df, title='fck', **kwargs)
+        fig = px.pie(df, **kwargs)
         st.plotly_chart(fig)
 
-    pie("sex.csv", values='number of patients', names='sex')
+    pie("sex.csv", values='number of patients', names='sex', title='fck')
     pie("cp.csv", values='number of patients', names='chest pain type')
     pie("fbs.csv", values='number of patients', names='fasting blood sugar over 120 mg/dl')
     pie("restecg.csv", values='number of patients', names='resting electrocardiographic results')
