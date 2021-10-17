@@ -44,13 +44,16 @@ def main():
     fig = Figure()
     ax = fig.subplots()
     sns.histplot(x='age', hue='target', data=df_unclean, element='step', ax=ax)
-    ax.set_xlabel('xlabel')
-    ax.set_ylabel('ylabel')
+    ax.set_xlabel('age')
+    ax.set_ylabel('count')
     st.pyplot(fig)
-#    fig = sns.histplot(x='age', hue='target', data=df_unclean, element='step')
-#    st.pyplot(fig)
-#    fig = sns.countplot(x = 'target', data = df_unclean, hue = 'slope')
-#    st.pyplot(fig)
+
+    fig = Figure()
+    ax = fig.subplots()
+    sns.countplot(x = 'target', data = df_unclean, hue = 'slope', ax=ax)
+    ax.set_xlabel('target')
+    ax.set_ylabel('count')
+    st.pyplot(fig)
 
     hide_menu_style = """
     <style>
