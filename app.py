@@ -29,10 +29,7 @@ def main():
         fig = px.pie(df, **kwargs)
         st.plotly_chart(fig)
 
-    fig = px.pie(df_unclean, values='sex')
-    st.plotly_chart(fig)
-
-    pie("sex_number of patients.csv", values='number of patients', names='sex')
+    pie("sex_number of patients.csv")
 #    pie(df_unclean['sex'], 'sex', 'number of patients')
     hide_menu_style = """
     <style>
