@@ -30,7 +30,7 @@ def main():
         st.plotly_chart(fig)
 
     pie("sex.csv", values='number of patients', names='sex', title='fck')
-    pie("cp.csv", values='number of patients', names='chest pain type')
+    pie("cp.csv", values='number of patients', names='chest pain type', title='hello')
     pie("fbs.csv", values='number of patients', names='fasting blood sugar over 120 mg/dl')
     pie("restecg.csv", values='number of patients', names='resting electrocardiographic results')
     pie("exang.csv", values='number of patients', names='exercise induced angina')
