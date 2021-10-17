@@ -35,7 +35,8 @@ def main():
         fig = px.pie(df, **kwargs)
         st.plotly_chart(fig)
 
-    pie2("sex.csv", values='number of patients', names='sex')
+    pie2(df_unclean['sex'], 'sex', 'number of patients')
+    pie("sex.csv", values='number of patients', names='sex')
     pie("cp.csv", values='number of patients', names='chest pain type')
     pie("fbs.csv", values='number of patients', names='fasting blood sugar over 120 mg/dl')
     pie("restecg.csv", values='number of patients', names='resting electrocardiographic results')
