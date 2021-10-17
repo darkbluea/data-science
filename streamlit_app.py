@@ -26,7 +26,7 @@ def main():
 
     def pie2(col, x, y):
         count = Counter(col)
-        count = pd.DataFrame({x:count.key(), y:count.values()})
+        count = pd.DataFrame({x:count.keys(), y:count.values()})
         fig = px.pie(count, x, y)
         st.plotly_chart(fig)
 
