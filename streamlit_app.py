@@ -17,7 +17,10 @@ st.set_page_config(page_title="Heart Disease", page_icon="https://www.freeiconsp
 
 def main():
     # title
-    html_temp = """
+    html_t        st.write("""
+        text
+        """)
+emp = """
     <div>
     <h1 style="color:MEDIUMSEAGREEN;text-align:left;"> Analyzing physical condition related to heart diseases ❤️ </h1>
     </div>
@@ -33,7 +36,7 @@ def main():
         fig = px.pie(df, **kwargs)
         st.plotly_chart(fig)
 
-    col1, col2 = st.columns(2)
+    col1, col2 = st.columns((.2, .1))
 
     with col1:
         pie("sex.csv", values='number of patients', names='sex', title='The distribution of men and women')
