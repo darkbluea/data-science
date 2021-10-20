@@ -28,6 +28,10 @@ def main():
     df_clean = pd.read_csv("clean_heart.csv")
     df_semi_clean = pd.read_csv("semi_cleaned_heart.csv")
 
+    option = st.selectbox("Data", ("1", "2", "3"))
+
+    st.write("u choose", option)
+
     def pie(name_dataset, **kwargs):
         df = pd.read_csv(name_dataset)
         fig = px.pie(df, **kwargs)
