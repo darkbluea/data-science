@@ -28,7 +28,7 @@ def main():
     df_clean = pd.read_csv("clean_heart.csv")
     df_semi_clean = pd.read_csv("semi_cleaned_heart.csv")
 
-    option = st.selectbox("Which data do you want to visualize", ("The distribution of men and women",
+    option = st.selectbox("Which data do you want to visualize ?", ("The distribution of men and women",
                                                                   "The distribution of the different types of chest pain",
                                                                   "The distribution of patients with and with fasting blood sugar",
                                                                   "the Distribution of patients resting electrocardiographic results",
@@ -59,45 +59,55 @@ def main():
     if option == "The distribution of patients with and without a heart disease":
         pie("target.csv", values='number of patients', names='target', title='The distribution of patients with and without a heart disease')
 
-    fig = Figure()
-    ax = fig.subplots()
-    sns.histplot(x='age', hue='target', data=df_semi_clean, element='step', ax=ax)
-    ax.set_xlabel('age')
-    ax.set_ylabel('count')
-    st.pyplot(fig)
-    st.write("""
-    We can see that heart diseases are more common to people that are above the age of 50.
-    """)
 
-    fig = Figure()
-    ax = fig.subplots()
-    sns.countplot(x = 'target', data = df_semi_clean, hue = 'slope', ax=ax)
-    ax.set_xlabel('target')
-    ax.set_ylabel('count')
-    st.pyplot(fig)
-    st.write("""
-    We can see that people who have less slopes in peak exercise are usually people with heart diseases. 
-    """)
+    opt2 = st.selectbox("Which data do you want to compare ?", ("Age of patients with and without heart disease",
+                                                                "Number of slopes in peak exercise of patients with and with heart disease",
+                                                                "Type of chest pains of patients with and without heart disease",
+                                                                "Chest pains after exercise of patients with or without heart disease"))
 
-    fig = Figure()
-    ax = fig.subplots()
-    sns.countplot(x = 'target', data = df_semi_clean, hue = 'cp', ax=ax)
-    ax.set_xlabel('target')
-    ax.set_ylabel('count')
-    st.pyplot(fig)
-    st.write("""
-    We can see that people with heart diseases mostly have "typical angina" type of chest pain.
-    """)
+    if opt2 == "Age of patients with and without heart disease":
+        fig = Figure()
+        ax = fig.subplots()
+        sns.histplot(x='age', hue='target', data=df_semi_clean, element='step', ax=ax)
+        ax.set_xlabel('age')
+        ax.set_ylabel('count')
+        st.pyplot(fig)
+        st.write("""
+        We can see that heart diseases are more common to people that are above the age of 50.
+        """)
 
-    fig = Figure()
-    ax = fig.subplots()
-    sns.countplot(x = 'target', data = df_semi_clean, hue = 'exang', ax=ax)
-    ax.set_xlabel('target')
-    ax.set_ylabel('count')
-    st.pyplot(fig)
-    st.write("""
-    We can see that people with heart diseases are more pron to chest pains after exercising
-    """)
+    if opt2 == "Number of slopes in peak exercise of patients with and with heart disease":
+        fig = Figure()
+        ax = fig.subplots()
+        sns.countplot(x = 'target', data = df_semi_clean, hue = 'slope', ax=ax)
+        ax.set_xlabel('target')
+        ax.set_ylabel('count')
+        st.pyplot(fig)
+        st.write("""
+        We can see that people who have less slopes in peak exercise are usually people with heart diseases. 
+        """)
+
+    if opt2 == "Type of chest pains of patients with and without heart disease":
+        fig = Figure()
+        ax = fig.subplots()
+        sns.countplot(x = 'target', data = df_semi_clean, hue = 'cp', ax=ax)
+        ax.set_xlabel('target')
+        ax.set_ylabel('count')
+        st.pyplot(fig)
+        st.write("""
+        We can see that people with heart diseases mostly have "typical angina" type of chest pain.
+        """)
+
+    if opt2 == "Chest pains after exercise of patients with or without heart disease":
+        fig = Figure()
+        ax = fig.subplots()
+        sns.countplot(x = 'target', data = df_semi_clean, hue = 'exang', ax=ax)
+        ax.set_xlabel('target')
+        ax.set_ylabel('count')
+        st.pyplot(fig)
+        st.write("""
+        We can see that people with heart diseases are more pron to chest pains after exercising
+        """)
 
     hide_menu_style = """
     <style>
