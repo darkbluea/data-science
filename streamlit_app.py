@@ -28,24 +28,36 @@ def main():
     df_clean = pd.read_csv("clean_heart.csv")
     df_semi_clean = pd.read_csv("semi_cleaned_heart.csv")
 
-    option = st.selectbox("Data", ("1", "2", "3"))
+    option = st.selectbox("Which data do you want to visualize", ("The distribution of men and women",
+                                                                  "The distribution of the different types of chest pain",
+                                                                  "The distribution of patients with and with fasting blood sugar",
+                                                                  "the Distribution of patients resting electrocardiographic results",
+                                                                  "The distribution of patients who feel chest pains after physical exercise",
+                                                                  "The distribution of the patients number number of major blood vessels coloured by colonoscopy",
+                                                                  "The distribution of the patients thal results",
+                                                                  "The distribution of patients with and without a heart disease"))
 
     def pie(name_dataset, **kwargs):
         df = pd.read_csv(name_dataset)
         fig = px.pie(df, **kwargs)
         st.plotly_chart(fig)
 
-    if option == "1":
+    if option == "The distribution of men and women":
         pie("sex.csv", values='number of patients', names='sex', title='The distribution of men and women')
-    if option == "2":
+    if option == "The distribution of the different types of chest pain":
         pie("cp.csv", values='number of patients', names='chest pain type', title='The distribution of the different types of chest pain')
-    if option == "3":
+    if option == "The distribution of patients with and with fasting blood sugar":
         pie("fbs.csv", values='number of patients', names='fasting blood sugar over 120 mg/dl', title='The distribution of patients with and with fasting blood sugar')
-    pie("restecg.csv", values='number of patients', names='resting electrocardiographic results', title='the Distribution of patients resting electrocardiographic results')
-    pie("exang.csv", values='number of patients', names='exercise induced angina', title='The distribution of patients who feel chest pains after physical exercise')
-    pie("ca.csv", values='number of patients', names='number of major blood vessels coloured by colonoscopy', title='The distribution of the patients number number of major blood vessels coloured by colonoscopy')
-    pie("thal.csv", values='number of patients', names='thal', title='The distribution of the patients thal results')
-    pie("target.csv", values='number of patients', names='target', title='The distribution of patients with and without a heart disease')
+    if option == "the Distribution of patients resting electrocardiographic results":
+        pie("restecg.csv", values='number of patients', names='resting electrocardiographic results', title='the Distribution of patients resting electrocardiographic results')
+    if option == "The distribution of patients who feel chest pains after physical exercise":
+        pie("exang.csv", values='number of patients', names='exercise induced angina', title='The distribution of patients who feel chest pains after physical exercise')
+    if option == "The distribution of the patients number number of major blood vessels coloured by colonoscopy":
+        pie("ca.csv", values='number of patients', names='number of major blood vessels coloured by colonoscopy', title='The distribution of the patients number number of major blood vessels coloured by colonoscopy')
+    if option == "The distribution of the patients thal results":
+        pie("thal.csv", values='number of patients', names='thal', title='The distribution of the patients thal results')
+    if option == "The distribution of patients with and without a heart disease":
+        pie("target.csv", values='number of patients', names='target', title='The distribution of patients with and without a heart disease')
 
     fig = Figure()
     ax = fig.subplots()
